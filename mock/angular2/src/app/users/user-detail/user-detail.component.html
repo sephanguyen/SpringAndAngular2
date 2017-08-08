@@ -1,0 +1,98 @@
+<div>
+  <!--<h2>{{user.userName}} details!</h2>-->
+  <div class="form-group row">
+      <label class="control-label col-sm-2 col-sm-offset-1 col-sm-offset-1">ID </label>
+      <div class="col-sm-7">          
+        <input [(ngModel)]="user.id" placeholder="ID" class="form-control" disabled />
+      </div>
+  </div>
+  <div class="form-group row">
+      <label class="control-label col-sm-2 col-sm-offset-1">Username </label>
+      <div class="col-sm-7">
+        <input type="text" name="name" required minlength="8"  maxlength="25" [(ngModel)]="user.userName" placeholder="Username" class="form-control" />
+      </div>
+      <label id="error_name_empty" class="error_label">Username is required!</label>
+  </div> 
+  <div class="form-group row">
+      <label class="control-label col-sm-2 col-sm-offset-1">Password </label>
+      <div class="col-sm-7">        
+        <input type="password" required  maxlength="25"[(ngModel)]="user.password" placeholder="Password" class="form-control" />
+      </div>
+      <label id="error_pass_empty" class="error_label">Password is required!</label>
+  </div>
+  <div class="form-group row">
+      <label class="control-label col-sm-2 col-sm-offset-1">Role ID </label>
+      <div class="col-sm-7">          
+        <input type="text" name="name" required minlength="2"  maxlength="2" [(ngModel)]="user.roleID" placeholder="Role ID" class="form-control" />
+      </div>
+      <label id="error_roleid_empty" class="error_label">Role ID is required!</label>
+  </div>
+  <div class="form-group row">
+      <label class="control-label col-sm-2 col-sm-offset-1">Library ID </label>
+      <div class="col-sm-7">          
+        <input  type="text" name="name" required minlength="2"  maxlength="2"[(ngModel)]="user.libID" placeholder="Library ID" class="form-control" />
+      </div>
+      <label id="error_libid_empty" class="error_label">Library ID is required!</label>
+  </div>
+  <div class="form-group row">
+      <label class="control-label col-sm-2 col-sm-offset-1">First name: </label>
+      <div class="col-sm-7">          
+        <input type="text" name="name" required   maxlength="25"[(ngModel)]="user.firstName" placeholder="First name" class="form-control" />
+      </div>
+      <label id="error_firstname_empty" class="error_label">First name is required!</label>
+  </div>
+  <div class="form-group row">
+      <label class="control-label col-sm-2 col-sm-offset-1">Last name </label>
+      <div class="col-sm-7">          
+        <input type="text" name="name" required  maxlength="25" [(ngModel)]="user.lastName" placeholder="Last name" class="form-control" />
+      </div>
+      <label id="error_lastname_empty" class="error_label">Last name is required!</label>
+  </div>
+  <div class="form-group row">
+      <label class="control-label col-sm-2 col-sm-offset-1">Address </label>
+      <div class="col-sm-7">          
+        <input type="text" name="name" required  maxlength="255"[(ngModel)]="user.address" placeholder="Address" class="form-control" />
+      </div>
+      <label id="error_address_empty" class="error_label">Address is required!</label>
+  </div>
+  <div class="form-group row">
+      <label class="control-label col-sm-2 col-sm-offset-1" >Birthday </label>
+      <div class="col-sm-7">          
+        <input id="datepicker" type ="date" required  min="2000-01-02" max="2050-01-02" [(ngModel)]="user.birthDay " class="form-control" />
+      </div>
+      <label id="error_birthday_empty" class="error_label">BirthDay is invalid!</label>
+  </div>
+  <div class="form-group row">
+      <label class="control-label col-sm-2 col-sm-offset-1">Phone number </label>
+      <div class="col-sm-7">          
+        <input type="tel" required  maxlength="15" [(ngModel)]="user.phone" placeholder="Phone number" class="form-control" />
+      </div>
+      <label id="error_phone_empty" class="error_label">Phone number is required!</label>
+  </div>
+  <div class="form-group row">
+      <label class="control-label col-sm-2 col-sm-offset-1">Email </label>
+      <div class="col-sm-7">          
+        <input type="email" required  maxlength="225" [(ngModel)]="user.email" placeholder="Email" class="form-control" />
+      </div>
+       <label id="error_email_empty" class="error_label">Email is required!</label>
+  </div>
+  <div class="form-group row">
+      <label class="control-label col-sm-2 col-sm-offset-1">Card ID </label>
+      <div class="col-sm-7">          
+        <input type="text" name="name" required minlength="2"  maxlength="2" [(ngModel)]="user.cardID" placeholder="Card ID" class="form-control" />
+      </div>
+       <label id="error_cardid_empty" class="error_label">Cari ID is required!</label>
+  </div>
+  <div class="form-group row">
+      <label class="control-label col-sm-2 col-sm-offset-1">Active </label>
+      <div class="col-sm-7">          
+          <input type="checkbox" [(ngModel)]="user.active" class="checkbox" />
+      </div>
+  </div>
+  
+  <div class="form-group row col-sm-offset-3">
+     <button (click)="goBack()" class="btn btn-default">Back</button>
+     <button (click)="submit()" class="btn btn-primary">Save</button>
+      
+  </div>
+</div>

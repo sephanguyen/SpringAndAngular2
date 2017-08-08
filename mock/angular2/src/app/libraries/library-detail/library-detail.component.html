@@ -1,0 +1,43 @@
+<div *ngIf="library">
+
+  <div class="form-group">
+    <label>ID:</label>
+    <input type="text" [(ngModel)]="library.id" placeholder="Library ID" class="form-control" disabled/>
+  </div>
+
+  <div class="form-group">
+    <label>Library name:</label>
+    <label id="error_name_empty" class="error_label">Library name is required!</label>
+    <input type="text" [(ngModel)]="library.libAdmin" placeholder="Library Admin" class="form-control" />
+  </div>
+
+  <div class="form-group">
+    <label>Create date:</label>
+    <label id="error_date_invalid" class="error_label">Create date is invalid!</label>
+    <input type="date" [(ngModel)]="library.createDate" placeholder="Create Date" class="form-control" />
+  </div>
+
+  <div class="form-group">
+    <label>Active:</label>
+    <input type="checkbox" [(ngModel)]="library.active" placeholder="Active" class="checkbox" />
+  </div>
+
+  <!--
+  <div class="form-group">
+    <label for="name">Name Book:</label>
+    <input type="text" class="form-control" id="libAdmin" formControlName="libAdmin">
+  </div>
+
+ <div class="form-group row">
+      <label class="control-label col-sm-2 col-sm-offset-1">Username </label>
+      <div class="col-sm-7">          
+        <input [(ngModel)]="user.userName" placeholder="Username" class="form-control" />
+      </div>
+  </div>
+   -->
+
+  <button (click)="goBack()" class="btn btn-default">Back</button>
+  <button (click)="save()" class="btn btn-primary">Save</button>
+
+
+</div>

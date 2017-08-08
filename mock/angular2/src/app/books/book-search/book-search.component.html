@@ -1,0 +1,9 @@
+<form #formSearch class="navbar-form navbar-right">
+    <input #searchBox type="text" class="form-control" placeholder="Search..." (keyup)="search(searchBox.value)">
+    <div class="list-group" *ngIf="resultShow">
+      <button type="button" class="list-group-item" *ngFor="let book of books | async"
+            (click)=" formSearch.reset(); gotoDetail(book); ">
+        {{book.name}}
+        </button>
+    </div>
+</form>

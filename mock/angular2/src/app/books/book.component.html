@@ -1,0 +1,53 @@
+<div class="header">
+  <h4 class="title">Books</h4>
+</div>
+<a type="button" class="btn btn-success" [routerLink]="['new']">Add</a>
+<!--<div>
+    <input type="file" (change)="onChange($event)"/>
+</div> -->
+<div class="content table-responsive table-full-width">
+  <table class="table table-hover table-striped">
+    <thead>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Author</th>
+      <th>Publish</th>
+      <th>Year Published</th>
+      <th>Page Count</th>  
+      <th>Price</th>
+      <th>Date Arrived</th>
+      <th>Borrowed</th>
+      <th>Rating</th> 
+      <th>Deleted</th>  
+      <th>Active</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{book.id}}</td>
+        <td>{{book.name}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.publish}}</td>
+        <td>{{book.yearPublished | date: 'shortDate'}}</td>
+        <td>{{book.pageCount}}</td>
+        <td>{{book.price}}</td>
+        <td>{{book.dateArrived | date: 'shortDate'}}</td>
+        <td>{{book.borrowed}}</td>
+        <td>{{book.rating}}</td>
+        <td [ngSwitch]= "book.active">
+          <div *ngSwitchCase="true">Deleted</div>
+          <div *ngSwitchCase="false">Active</div>
+        </td>
+        <td>
+          <button type="button" class="btn btn-primary btn-sm" (click)="onEdit(book.id)">
+              <span class="glyphicon glyphicon-edit"></span>
+              </button>
+          <button type="button" class="btn btn-danger btn-sm" (click)="oDelete(book.id)">
+             <span class="glyphicon glyphicon-trash"></span>
+             </button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>

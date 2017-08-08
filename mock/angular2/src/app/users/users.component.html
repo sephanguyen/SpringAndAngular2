@@ -1,0 +1,88 @@
+<!--<user-search></user-search>
+<h2>My Users</h2>-->
+
+<div>
+ <!-- <label>User name:</label> <input #username />
+  <label>Password:</label> <input #password />
+  <label>Role ID:</label> <input #roleid />
+  <label>Library ID:</label> <input #libid />
+  <label>Last name:</label> <input #lastname />
+  <label>First name:</label> <input #firstname />
+  <label>Birth day:</label> <input #birthday />
+  <label>Address:</label> <input #address />
+  <label>Phone number:</label> <input #phone />
+  <label>Email:</label> <input #email />
+  <label>Card ID:</label> <input #cardid />
+  <label>Active:</label> <input #active />
+  <button (click)="add(username.value,password.value,roleid.value,libid.value,
+  lastname.value,firstname.value,birthday.value,address.value,phone.value,email.value,cardid.value,active.value);username.value=''">
+    Add
+  </button>-->
+<button class="btn btn-success" (click)="gotoNewUser()">New
+</button>
+</div>
+
+<!--<ul class="users">
+  <li *ngFor="let user of users" (click)="onSelect(user)"
+      [class.selected]="user === selectedUser">
+    <span class="badge">{{user.id}}</span>
+    <span>{{user.username}}</span>
+    <button class="delete"
+      (click)="delete(user); $event.stopPropagation()">x</button>
+  </li>
+
+</ul>
+<div *ngIf="selectedUser">
+  <h2>
+    {{selectedUser.username | uppercase}} is my user
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>-->
+
+<div class="table-responsive">
+  <table class="table table-hover">
+      <thead>
+          <tr>
+              <th> ID </th>
+              <th> Username </th>
+              <!--<th> Password </th>-->
+              <th> Role ID </th>
+              <th> Library ID </th>
+              <th> First name </th>
+              <th> Last name </th>
+              <th> Birthday </th>
+              <th> Address </th>
+              <th> Phone number </th>
+              <th> Email </th>
+              <th> Card ID </th>
+              <th> Active </th>
+              <th> Action </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let user of users; let i = index" >
+              <td> {{user.id}} </td>
+              <td> {{user.userName}} </td>
+              
+              <td> {{user.roleID}} </td>
+              <td> {{user.libID}} </td>
+              <td> {{user.firstName}} </td>
+              <td> {{user.lastName}} </td>
+              <td> {{user.birthDay | date: "dd/MM/yyyy"}} </td>
+              <td> {{user.address}} </td>
+              <td> {{user.phone}} </td>
+              <td> {{user.email}} </td>
+              <td> {{user.cardID}} </td>
+              <td><input type="checkbox" class="checkbox" [(ngModel)]="user.active" disabled/> </td>
+              <td> 
+                  <button class="btn btn-primary btn-sm" (click)="gotoDetail(user)">
+              <span class="glyphicon glyphicon-edit"></span>
+            </button>
+            <button class="btn btn-danger btn-sm" (click)="delete(user); $event.stopPropagation()">
+              <span class="glyphicon glyphicon-trash"></span>
+            </button>
+              </td>
+          </tr>
+      <tbody>
+  </table>
+</div>
